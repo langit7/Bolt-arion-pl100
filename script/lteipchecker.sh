@@ -30,7 +30,7 @@ IPJ=$(
 
 lteip=$(echo $IPJ | awk -F '[<>]' '{print $3 }')
 ltedns=$(echo $IPJ | awk -F '[<>]' '{print $(NF-2) }')
-echo "$ip $dns"
+echo "$lteip $ltedns"
 
 ethdataip=$(ifconfig modem.103 | grep 'inet addr' | cut -d: -f2 | awk '{print $1}')
 
