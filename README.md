@@ -27,5 +27,5 @@ nvram_set ODMC_simlock_plmn_list ""
 ```
 Cara ganti IMEI
 ```
-karena termasuk tindakan ilegal silahkan japri
+ilegal
 ```
