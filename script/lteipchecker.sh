@@ -5,10 +5,15 @@ DATA=$(curl -s http://169.254.0.1/cgi-bin/login.cgi?Command=getLoginStok -H 'Ref
 STOK=$(echo "$DATA" | awk -F '[<>]' '/login_stok/{print $3 }')
 
 #Validate user/password
-LOGINX=$(curl -s http://169.254.0.1/cgi-bin/login.cgi -H "X-Stok: $STOK" -H 'Referer: http://169.254.0.1/Login.html' -H 'Origin: http://169.254.0.1' --data-raw 'Command=setUserCheck&input_URN=admin&rand_PWD=admin')
+LOGINX=$(
+curl -s http://169.254.0.1/cgi-bin/login.cgi \
+-H "X-Stok: $STOK" -H 'Referer: http://169.254.0.1/Login.html' \
+-H 'Origin: http://169.254.0.1' --data-raw 'Command=setUserCheck&input_URN=admin&rand_PWD=admin')
 
 #Capture session_id
-SESS=$(curl -c cookie.txt -L -s http://169.254.0.1/cgi-bin/login.cgi -H "X-Stok: $STOK" -H 'Referer: http://169.254.0.1/Login.html' -H 'Origin: http://169.254.0.1' --data-raw 'Command=setLOGINvalue&input_URN=admin&rand_PWD=admin')
+SESS=$(curl -c cookie.txt -L -s http://169.254.0.1/cgi-bin/login.cgi \
+-H "X-Stok: $STOK" -H 'Referer: http://169.254.0.1/Login.html' -H 'Origin: http://169.254.0.1' \
+--data-raw 'Command=setLOGINvalue&input_URN=admin&rand_PWD=admin')
 
 #Capture LTE IP
 IPJ=$(
@@ -19,7 +24,7 @@ IPJ=$(
       -H 'Referer: http://169.254.0.1/status.html' \
       -H 'Accept-Language: en-US,en;q=0.9' \
       -b cookie.txt | egrep 'getWanIp|getDns1'
-)
+      )
 
 #<getWanIp>10.18.134.77</getWanIp> <getWanIpv6></getWanIpv6> <getDns1>192.168.136.30</getDns1>
 
