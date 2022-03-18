@@ -1,0 +1,1254 @@
+﻿
+===================================================================
+                MT7621   stage1 code Mar 12 2015 14:43:30 (ASIC)
+                CPU=500000000 HZ BUS=166666666 HZ
+==================================================================
+Change MPLL source from XTAL to CR...
+do MEMPLL setting..
+MEMPLL Config : 0x11000000
+3PLL mode + External loopback
+=== XTAL-40Mhz === DDR-1200Mhz ===
+PLL4 FB_DL: 0xf, 1/0 = 527/497 3D000000
+PLL2 FB_DL: 0x12, 1/0 = 771/253 49000000
+PLL3 FB_DL: 0x12, 1/0 = 612/412 49000000
+do DDR setting..[01F40000]
+Apply DDR3 Setting...(use default AC)
+          0    8   16   24   32   40   48   56   64   72   80   88   96  104  112  120
+      --------------------------------------------------------------------------------
+0000:|    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+0001:|    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+0002:|    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+0003:|    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+0004:|    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+0005:|    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+0006:|    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+0007:|    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+0008:|    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+0009:|    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+000A:|    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+000B:|    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+000C:|    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+000D:|    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    1
+000E:|    0    0    0    0    0    0    0    0    0    1    1    1    1    1    1    1
+000F:|    0    0    0    0    1    1    1    1    1    1    1    1    1    1    0    0
+0010:|    1    1    1    1    1    1    1    1    1    0    0    0    0    0    0    0
+0011:|    1    1    1    1    0    0    0    0    0    0    0    0    0    0    0    0
+0012:|    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+0013:|    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+0014:|    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+0015:|    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+0016:|    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+0017:|    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+0018:|    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+0019:|    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+001A:|    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+001B:|    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+001C:|    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+001D:|    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+001E:|    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+001F:|    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0    0
+DRAMC_DQSCTL1[0e0]=13000000
+DRAMC_DQSGCTL[124]=80000033
+rank 0 coarse = 15
+rank 0 fine = 72
+B:|    0    0    0    0    0    0    0    0    0    1    1    1    0    0    0    0
+opt_dle value:10
+DRAMC_DDR2CTL[07c]=C287222D
+DRAMC_PADCTL4[0e4]=000022B3
+DRAMC_DQIDLY1[210]=0B0C090B
+DRAMC_DQIDLY2[214]=060B0709
+DRAMC_DQIDLY3[218]=0B0A0908
+DRAMC_DQIDLY4[21c]=0A090D09
+DRAMC_R0DELDLY[018]=00001E1F
+==================================================================
+                RX      DQS perbit delay software calibration 
+==================================================================
+1.0-15 bit dq delay value
+==================================================================
+bit|     0  1  2  3  4  5  6  7  8  9
+--------------------------------------
+0 |    11 7 11 10 9 7 11 6 7 7 
+10 |    8 9 9 11 9 10 
+--------------------------------------
+
+==================================================================
+2.dqs window
+x=pass dqs delay value (min~max)center 
+y=0-7bit DQ of every group
+input delay:DQS0 =31 DQS1 = 30
+==================================================================
+bit     DQS0     bit      DQS1
+0  (1~61)31  8  (1~58)29
+1  (1~58)29  9  (1~56)28
+2  (2~59)30  10  (1~56)28
+3  (1~60)30  11  (1~56)28
+4  (1~61)31  12  (1~60)30
+5  (1~61)31  13  (1~56)28
+6  (1~61)31  14  (1~59)30
+7  (0~62)31  15  (1~59)30
+==================================================================
+3.dq delay value last
+==================================================================
+bit|    0  1  2  3  4  5  6  7  8   9
+--------------------------------------
+0 |    11 9 12 11 9 7 11 6 8 9 
+10 |    10 11 9 13 9 10 
+==================================================================
+==================================================================
+     TX  perbyte calibration 
+==================================================================
+DQS loop = 15, cmp_err_1 = ffff0000 
+dqs_perbyte_dly.last_dqsdly_pass[0]=15,  finish count=1 
+dqs_perbyte_dly.last_dqsdly_pass[1]=15,  finish count=2 
+DQ loop=15, cmp_err_1 = ffff0080
+dqs_perbyte_dly.last_dqdly_pass[1]=15,  finish count=1 
+DQ loop=14, cmp_err_1 = ffff0000
+dqs_perbyte_dly.last_dqdly_pass[0]=14,  finish count=2 
+byte:0, (DQS,DQ)=(8,8)
+byte:1, (DQS,DQ)=(8,8)
+DRAMC_DQODLY1[200]=88888888
+DRAMC_DQODLY2[204]=88888888
+20,data:88
+[EMI] DRAMC calibration passed
+
+===================================================================
+                MT7621   stage1 code done 
+                CPU=500000000 HZ BUS=166666666 HZ
+===================================================================
+
+
+U-Boot 1.1.3 (Dec  4 2017 - 15:34:54)
+
+Board: Ralink APSoC DRAM:  128 MB
+relocate_code Pointer at: 87fb8000
+
+Config XHCI 40M PLL 
+flash manufacture id: c2, device id 20 19
+find flash: MX25L25635E
+*** Warning - bad CRC, using default environment
+
+============================================ 
+Ralink UBoot Version: 4.3.0.6
+-------------------------------------------- 
+ASIC MT7621A DualCore (MAC to MT7530 Mode)
+DRAM_CONF_FROM: Auto-Detection 
+DRAM_TYPE: DDR3 
+DRAM bus: 16 bit
+Xtal Mode=5 OCP Ratio=1/3
+Flash component: SPI Flash
+Date:Dec  4 2017  Time:15:34:54
+============================================ 
+icache: sets:256, ways:4, linesz:32 ,total:32768
+dcache: sets:256, ways:4, linesz:32 ,total:32768 
+
+ ##### The CPU freq = 880 MHZ #### 
+ estimate memory size =128 Mbytes
+#Reset_MT7530
+set LAN/WAN WLLLL
+
+Please choose the operation: 
+   1: Load system code to SDRAM via TFTP. 
+   2: Load system code then write to Flash via TFTP. 
+   3: Boot system code via Flash (default).
+   4: Entr boot command line interface.
+   7: Load Boot Loader code then write to Flash via Serial. 
+   9: Load Boot Loader code then write to Flash via TFTP. 
+ 0 
+   
+3: System Boot system code via Flash[1st image].
+## Booting image at bc050000 ...
+Skip checking image magic number
+   Image Name:   
+   Image Type:   MIPS Linux Kernel Image (lzma compressed)
+   Data Size:    10088374 Bytes =  9.6 MB
+   Load Address: 80001000
+   Entry Point:  8000d210
+   Verifying Checksum ... OK
+   Uncompressing Kernel Image ... OK
+No initrd
+## Transferring control to Linux (at address 8000d210) ...
+## Giving linux memsize in MB, 128
+
+Starting kernel ...
+
+
+LINUX started...
+
+ THIS IS ASIC
+Linux version 2.6.36 (root@jglv) (gcc version 4.6.3 (Buildroot 2012.11.1) ) #1 SMP PREEMPT Thu May 10 12:58:53 CST 2018
+
+ The CPU feqenuce set to 880 MHz
+GCMP present
+CPU revision is: 0001992f (MIPS 1004Kc)
+Software DMA cache coherency
+Determined physical RAM map:
+ memory: 08000000 @ 00000000 (usable)
+Initrd not found or empty - disabling initrd
+Zone PFN ranges:
+  Normal   0x00000000 -> 0x00008000
+Movable zone start PFN for each node
+early_node_map[1] active PFN ranges
+    0: 0x00000000 -> 0x00008000
+Detected 3 available secondary CPU(s)
+PERCPU: Embedded 7 pages/cpu @81103000 s7552 r8192 d12928 u65536
+pcpu-alloc: s7552 r8192 d12928 u65536 alloc=16*4096
+pcpu-alloc: [0] 0 [0] 1 [0] 2 [0] 3 
+Built 1 zonelists in Zone order, mobility grouping on.  Total pages: 32512
+Kernel command line: console=ttyS1,57600n8 root=/dev/ram0 console=ttyS1,57600 root=/dev/ram0 rootfstype=squashfs,jffs2 isolcpus=1
+PID hash table entries: 512 (order: -1, 2048 bytes)
+Dentry cache hash table entries: 16384 (order: 4, 65536 bytes)
+Inode-cache hash table entries: 8192 (order: 3, 32768 bytes)
+Primary instruction cache 32kB, VIPT, , 4-waylinesize 32 bytes.
+Primary data cache 32kB, 4-way, PIPT, no aliases, linesize 32 bytes
+MIPS secondary cache 256kB, 8-way, linesize 32 bytes.
+Writing ErrCtl register=000004c1
+Readback ErrCtl register=000004c1
+Memory: 115660k/131072k available (4293k kernel code, 15412k reserved, 1470k data, 8008k init, 0k highmem)
+Preemptable hierarchical RCU implementation.
+        RCU debugfs-based tracing is enabled.
+NR_IRQS:128
+Trying to install interrupt handler for IRQ24
+Trying to install interrupt handler for IRQ25
+Trying to install interrupt handler for IRQ22
+Trying to install interrupt handler for IRQ9
+Trying to install interrupt handler for IRQ10
+Trying to install interrupt handler for IRQ11
+Trying to install interrupt handler for IRQ12
+Trying to install interrupt handler for IRQ13
+Trying to install interrupt handler for IRQ14
+Trying to install interrupt handler for IRQ16
+Trying to install interrupt handler for IRQ17
+Trying to install interrupt handler for IRQ18
+Trying to install interrupt handler for IRQ19
+Trying to install interrupt handler for IRQ20
+Trying to install interrupt handler for IRQ21
+Trying to install interrupt handler for IRQ23
+Trying to install interrupt handler for IRQ26
+Trying to install interrupt handler for IRQ27
+Trying to install interrupt handler for IRQ28
+Trying to install interrupt handler for IRQ15
+Trying to install interrupt handler for IRQ8
+Trying to install interrupt handler for IRQ29
+Trying to install interrupt handler for IRQ30
+Trying to install interrupt handler for IRQ31
+console [ttyS1] enabled
+Calibrating delay loop... 577.53 BogoMIPS (lpj=1155072)
+pid_max: default: 32768 minimum: 301
+Mount-cache hash table entries: 512
+launch: starting cpu1
+launch: cpu1 gone!
+CPU revision is: 0001992f (MIPS 1004Kc)
+Primary instruction cache 32kB, VIPT, , 4-waylinesize 32 bytes.
+Primary data cache 32kB, 4-way, PIPT, no aliases, linesize 32 bytes
+MIPS secondary cache 256kB, 8-way, linesize 32 bytes.
+launch: starting cpu2
+launch: cpu2 gone!
+CPU revision is: 0001992f (MIPS 1004Kc)
+Primary instruction cache 32kB, VIPT, , 4-waylinesize 32 bytes.
+Primary data cache 32kB, 4-way, PIPT, no aliases, linesize 32 bytes
+MIPS secondary cache 256kB, 8-way, linesize 32 bytes.
+launch: starting cpu3
+launch: cpu3 gone!
+CPU revision is: 0001992f (MIPS 1004Kc)
+Primary instruction cache 32kB, VIPT, , 4-waylinesize 32 bytes.
+Primary data cache 32kB, 4-way, PIPT, no aliases, linesize 32 bytes
+MIPS secondary cache 256kB, 8-way, linesize 32 bytes.
+Brought up 4 CPUs
+Synchronize counters across 4 CPUs: done.
+NET: Registered protocol family 16
+release PCIe RST: RALINK_RSTCTRL = 7000000
+PCIE PHY initialize
+***** Xtal 40MHz *****
+start MT7621 PCIe register access
+RALINK_RSTCTRL = 7000000
+RALINK_CLKCFG1 = 77ffeff8
+
+*************** MT7621 PCIe RC mode *************
+PCIE2 no card, disable it(RST&CLK)
+pcie_link status = 0x3
+RALINK_RSTCTRL= 3000000
+*** Configure Device number setting of Virtual PCI-PCI bridge ***
+RALINK_PCI_PCICFG_ADDR = 21007f2 -> 21007f2
+PCIE0 enabled
+PCIE1 enabled
+interrupt enable status: 300000
+Port 1 N_FTS = 1b105000
+Port 0 N_FTS = 1b105000
+config reg done
+init_rt2880pci done
+bio: create slab <bio-0> at 0
+vgaarb: loaded
+pci 0000:00:00.0: BAR 0: can't assign mem (size 0x80000000)
+pci 0000:00:01.0: BAR 0: can't assign mem (size 0x80000000)
+pci 0000:00:00.0: PCI bridge to [bus 01-01]
+pci 0000:00:00.0:   bridge window [mem 0x60000000-0x600fffff]
+pci 0000:00:01.0: PCI bridge to [bus 02-02]
+pci 0000:00:01.0:   bridge window [mem 0x60100000-0x601fffff]
+pci 0000:00:01.0:   bridge window [mem 0x60200000-0x602fffff pref]
+PCI: Enabling device 0000:00:00.0 (0004 -> 0006)
+PCI: Enabling device 0000:00:01.0 (0004 -> 0006)
+BAR0 at slot 0 = 0
+bus=0x0, slot = 0x0
+BAR0 at slot 1 = 0
+bus=0x0, slot = 0x1
+bus=0x1, slot = 0x0, irq=0x4
+bus=0x2, slot = 0x1, irq=0x18
+Switching to clocksource Ralink Systick timer
+NET: Registered protocol family 2
+IP route cache hash table entries: 1024 (order: 0, 4096 bytes)
+TCP established hash table entries: 4096 (order: 3, 32768 bytes)
+TCP bind hash table entries: 4096 (order: 3, 32768 bytes)
+TCP: Hash tables configured (established 4096 bind 4096)
+TCP reno registered
+UDP hash table entries: 128 (order: 0, 4096 bytes)
+UDP-Lite hash table entries: 128 (order: 0, 4096 bytes)
+NET: Registered protocol family 1
+4 CPUs re-calibrate udelay(lpj = 1167360)
+Load Ralink Timer0 Module
+Load Ralink Timer1 Module
+Load Ralink Timer2 Module
+fuse init (API version 7.15)
+msgmni has been set to 225
+Block layer SCSI generic (bsg) driver version 0.4 loaded (major 254)
+io scheduler noop registered (default)
+pcieport 0000:00:00.0: device [0e8d:0801] has invalid IRQ; check vendor BIOS
+pcieport 0000:00:01.0: device [0e8d:0801] has invalid IRQ; check vendor BIOS
+Ralink gpio driver initialized
+Serial: 8250/16550 driver, 2 ports, IRQ sharing disabled
+serial8250: ttyS0 at MMIO 0x1e000d00 (irq = 27) is a 16550A
+serial8250: ttyS1 at MMIO 0x1e000c00 (irq = 26) is a 16550A
+brd: module loaded
+flash manufacture id: c2, device id 20 19
+MX25L25635E(c2 2019c220) (32768 Kbytes)
+mtd .name = raspi, .size = 0x02000000 (32M) .erasesize = 0x00010000 (64K) .numeraseregions = 0
+Creating 5 MTD partitions on "raspi":
+0x000000000000-0x000002000000 : "ALL"
+0x000000000000-0x000000020000 : "Bootloader"
+0x000000020000-0x000000040000 : "Config"
+0x000000040000-0x000000050000 : "Factory"
+0x000000050000-0x000001000000 : "Kernel"
+rdm_major = 253
+GMAC1_MAC_ADRH -- : 0x0000d4c8
+GMAC1_MAC_ADRL -- : 0xb0462570
+Ralink APSoC Ethernet Driver Initilization. v3.1  1024 rx/tx descriptors allocated, mtu = 1500!
+GMAC1_MAC_ADRH -- : 0x0000d4c8
+GMAC1_MAC_ADRL -- : 0xb0462570
+PROC INIT OK!
+PPP generic driver version 2.4.2
+PPP Deflate Compression module registered
+PPP BSD Compression module registered
+PPP MPPE Compression module registered
+NET: Registered protocol family 24
+
+
+=== pAd = c0282000, size = 1234208 ===
+
+<-- RTMPAllocTxRxRingMemory, Status=0, ErrorValue=0x
+<-- RTMPAllocAdapterBlock, Status=0
+device_id =0x7603
+RtmpChipOpsHook(558): Not support for HIF_MT yet!
+check WiFi led...
+mt7603_init()-->
+mt_bcn_buf_init(224): Not support for HIF_MT yet!
+<--mt7603_init()
+Ralink APSoC Hardware Watchdog Timer
+Netfilter messages via NETLINK v0.30.
+[pbi]get NAT type fail!, use default:NAT_SYMMETRIC
+nf_conntrack version 0.5.0 (1807 buckets, 7228 max)
+ctnetlink v0.93: registering with nfnetlink.
+matchsize=264
+IPVS: Registered protocols ()
+IPVS: Connection hash table configured (size=4096, memory=32Kbytes)
+IPVS: ipvs loaded.
+GRE over IPv4 demultiplexor driver
+GRE over IPv4 tunneling driver
+nf_nat_rtsp v0.6.21 loading
+ip_tables: (C) 2000-2006 Netfilter Core Team, [pbi]get NAT type fail!, use default:NAT_SYMMETRIC
+Type=Linux
+TCP cubic registered
+NET: Registered protocol family 10
+lo: Disabled Privacy Extensions
+ip6_tables: (C) 2000-2006 Netfilter Core Team
+NET: Registered protocol family 17
+Bridge firewalling registered
+Ebtables v2.0 registered
+L2TP core driver, V2.0
+PPPoL2TP kernel driver, V2.0
+802.1Q VLAN Support v1.8 Ben Greear <greearb@candelatech.com>
+All bugs added by David S. Miller <davem@redhat.com>
+Warning: unable to open an initial console.
+Freeing unused kernel memory: 8008k freed
+Welcome to
+     __   ___  _____  _____   _  _______ ______  _____  _   ___
+    |  \ /   ||  ___||  __ \ | ||  __  ||__  __||  ___|| | /  /
+    |   ^    || |__  | |  \ \| || |  | |  | |   | |__  | |/  /
+    |  | |   ||  ___|| |  | || || |__| |  | |   |  ___||    \
+    |  | |   || |___ | |__/ /| ||  __  |  | |   | |___ | |\  \
+    |__| |___||_____||_____/ |_||_|  |_|  |_|   |_____||_| \__\
+
+                        = Everyday Genius =
+                            
+~~~~~~~~~~ restore customize config start ~~~~~~~~~~ 
+COUNT_ODMC=16
+COUNT_CSTM=16
+~~~~~~~~~~ restore customize config end ~~~~~~~~~~ 
+[pbi] check config key....
+vm.panic_on_oom = 1
+kernel.panic = 10
+net.ipv4.conf.default.arp_ignore = 1
+net.ipv4.conf.all.arp_ignore = 1
+net.ipv4.icmp_echo_ignore_broadcasts = 1
+net.ipv4.icmp_ignore_bogus_error_responses = 1
+net.ipv4.tcp_tw_reuse = 1
+net.ipv4.tcp_tw_recycle = 0
+net.netfilter.nf_conntrack_checksum = 0
+net.netfilter.nf_conntrack_max = 16384
+net.netfilter.nf_conntrack_tcp_timeout_time_wait = 10
+net.ipv4.tcp_max_tw_buckets = 8192
+net.bridge.bridge-nf-call-arptables = 0
+net.bridge.bridge-nf-call-ip6tables = 0
+net.bridge.bridge-nf-call-iptables = 0
+net.core.rmem_max = 124928
+net.core.wmem_max = 124928
+net.ipv4.tcp_rmem = 4096 87380 186624
+net.ipv4.tcp_wmem = 4096 87380 186624
+net.ipv4.tcp_mem = 4374 5832 8748
+net.core.netdev_max_backlog = 1000
+Password for 'admin' changed
+FFFFFFD4:FFFFFFC8:FFFFFFB0:46:25:70
+Raeth v3.1 (Tasklet)
+phy_free_head is 0x5b30000!!!
+phy_free_tail_phy is 0x5b31ff0!!!
+txd_pool=a5b34000 phy_txd_pool=05B34000
+ei_local->skb_free start address is 0x87dc24fc.
+free_txd: 05b34010, ei_local->cpu_ptr: 05B34000
+ POOL  HEAD_PTR | DMA_PTR | CPU_PTR 
+----------------+---------+--------
+     0xa5b34000 0x05B34000 0x05B34000
+
+phy_qrx_ring = 0x05b2f000, qrx_ring = 0xa5b2f000
+
+phy_rx_ring0 = 0x05b38000, rx_ring0 = 0xa5b38000
+MT7530 Reset Completed!!
+change HW-TRAP to 0x17ccf
+set LAN/WAN WLLLL
+GMAC1_MAC_ADRH -- : 0x0000d4c8
+GMAC1_MAC_ADRL -- : 0xb0462570
+CDMA_CSG_CFG = 81000000
+GDMA1_FWD_CFG = 20710000
+@@@ create necessary device nodes for voIP
+mknod: /dev/vdsp: File exists
+mknod: /dev/slic: File exists
+Password for 'admin' changed
+switch reg write offset=2004, value=ff0003
+switch reg write offset=2104, value=ff0003
+switch reg write offset=2204, value=ff0003
+switch reg write offset=2304, value=ff0003
+switch reg write offset=2404, value=ff0003
+switch reg write offset=2504, value=ff0003
+switch reg write offset=2010, value=81000000
+switch reg write offset=2110, value=810000c0
+switch reg write offset=2210, value=810000c0
+switch reg write offset=2310, value=810000c0
+switch reg write offset=2410, value=810000c0
+switch reg write offset=2510, value=810000c0
+switch reg write offset=2610, value=81000000
+switch reg write offset=2710, value=81000000
+switch reg write offset=2004, value=20ff0003
+switch reg write offset=2604, value=20ff0003
+switch reg write offset=2704, value=20ff0003
+Special Tag Disabled
+switch reg write offset=2610, value=81000000
+switch reg write offset=2014, value=10001
+switch reg write offset=2114, value=10001
+switch reg write offset=2214, value=10001
+switch reg write offset=2314, value=10001
+switch reg write offset=2414, value=10001
+switch reg write offset=2514, value=10001
+ifconfig eth_om 169.254.0.2 netmask 255.255.255.252 up route add -host 169.254.0.1 dev eth_om
+REG_ESW_WT_MAC_ATC is 0x7ff0002
+done.
+REG_ESW_WT_MAC_ATA1 is 0xd4c8b046
+REG_ESW_WT_MAC_ATA2 is 0x25708067
+REG_ESW_WT_MAC_ATWD is 0xff00041c
+done.
+net.ipv4.ip_forward = 1
+[cpe_wd] cpe_wd started.
+Interface doesn't accept private ioctl...
+set (8BE2): Network is down
+[00:00:14.584280][CCM]: plmnListConfig:51001-51089.
+[00:00:14.584840][CCM]: plmnListCustom:51001-51089.
+[00:00:14.585180][CCM]: plmnList is same.[51001-51089]
+set comm_log_level:1
+[00:00:14.586160][CCM]: SIMLOCK plmn list num:1.
+set comm_log_level:1
+[00:00:14.589160][COMMCUDP]: comm commcrtl_cudp_initSocket OK.
+[00:00:14.589740][COMMCUDP]: comm commctrl_cudp_initThread OK.
+[00:00:14.590180][COMMCUDP]: cudp comm_udp_clientsock:16 
+[00:00:14.591160][COMMCUDP]: listen socket creat success!c_cUdpSocket:[4]
+rai0      no private ioctls.
+
+ESW: Link Status Changed - Port0 Link UP
+do sysRegWrite cmd set gpio on/off
+[00:00:15.090540][COMM]: [comm]:unknow msg type(8).
+[00:00:15.091040][COMMCTCP]: comm detect odu power up.
+[00:00:15.327000][COMMCTCP]: Connect OK [4]!
+[00:00:15.328400][COMMLTCP]: Accept new socket 17!
+[00:00:15.332140][LCM]: lcm recv socket channel ready msg.
+[00:00:15.336140][LCM]: lcm_simLedCtrl:state 3 .
+[00:00:15.340140][LCM]: stMsg.homePlmn 51010.
+[00:00:15.588820][CCM]: IDU detect ethernet interface up.
+[00:00:15.589240][CCM]: ccm recv socket channel ready msg.
+[00:00:15.590160][CCM]: socket channel ready.
+[00:00:15.590900][CCM]: cm_simLedCtrl:255 error .
+[00:00:15.662280][LCM]: lcm_simLedCtrl:state 3 .
+[00:00:15.674680][LCM]: [attachmode]operateFlg:[0] attachStatusFlg:[0] mode:[0] manual:[0].
+[00:00:15.724780][LCM]: [attachmode]operateFlg:[0] attachStatusFlg:[0] mode:[0] manual:[0].
+[00:00:15.728180][LCM]: init connect status data:1 (1)
+[00:00:15.732120][LCM]: init connect status voip:1 (1)
+[00:00:15.736060][LCM]: init connect status all :1 (1)
+[00:00:15.740060][LCM]: detach rsp is too late.Manual Attach is Idle.
+[00:00:15.805800][LCM]: init connect status data:1 (1)
+[00:00:15.808060][LCM]: init connect status voip:1 (1)
+[00:00:15.812040][LCM]: init connect status all :1 (1)
+[00:00:15.816040][LCM]: detach rsp is too late.Manual Attach is Idle.
+ESW: Link Status Changed - Port1 Link UP
+do sysRegWrite cmd set gpio on/off
+[00:00:16.018940][LCM]: init connect status data:1 (1)
+[00:00:16.020040][LCM]: init connect status voip:1 (1)
+[00:00:16.024040][LCM]: init connect status all :1 (1)
+[00:00:16.028040][LCM]: [attachmode]operate:[0],emm:[0],old:[0],attachmode:[0],searchmode:[2].
+[00:00:16.156160][LCM]: init connect status data:1 (1)
+[00:00:16.160080][LCM]: init connect status voip:1 (1)
+[00:00:16.164060][LCM]: init connect status all :1 (1)
+[00:00:16.168120][LCM]: [attachmode]operate:[0],emm:[0],old:[0],attachmode:[0],searchmode:[2].
+device eth2.1 entered promiscuous mode
+device eth2 entered promiscuous mode
+br0: port 1(eth2.1) entering learning state
+br0: port 1(eth2.1) entering learning state
+br0: port 1(eth2.1) entering forwarding state
+
+
+=== pAd = c0902000, size = 2182904 ===
+
+<-- RTMPAllocTxRxRingMemory, Status=0
+<-- RTMPAllocAdapterBlock, Status=0
+device_id =0x7662
+==>rlt_wlan_chip_onoff(): OnOff:1, Reset= 1, pAd->WlanFunCtrl:0x0, Reg-WlanFunCtrl=0x20a
+chip_id1=7603e, chip_id2=7612e, pAd->MACVersion=0x76623000
+chip_id1=0x7603e, chip_id2=0x7612e, pAd->MACVersion=0x76623000
+RtmpChipOpsEepromHook::e2p_type=0, inf_Type=5
+RtmpEepromGetDefault::e2p_dafault=2
+NVM is efuse and the information is too less to bring up the interface
+Force to use Flash mode
+NVM is FLASH mode (pAd->flash_offset = 0x48000)
+get_dev_name_prefix(): dev_idx = 1, dev_name_prefix=rai
+dns_pesi.sh read nv start
+dns_pesi.sh read nv stop
+dns_pesi.sh rm start
+dns_pesi.sh rm stop
+LTE_DNS
+Ethernet_DNS
+killall: dnsmasq: no process killed
+dns_pesi.sh all stop
+[LAN_DBG]do update lan route config...
+[/sbin/allnetconfig.sh]data pdn disconnected
+[/sbin/allnetconfig.sh]voice pdn disconnected
+Stop Static Route ...
+net.ipv4.ip_forward = 1
+Start Static Route ...
+static route list =
+net.ipv4.ip_forward = 1
+conntrack v1.4.2 (conntrack-tools): 0 flow entries have been deleted.
+conntrack v1.4.2 (conntrack-tools): 0 flow entries have been deleted.
+Static Route restart ok
+Config system network route_update ok
+
+argument2 is null.
+killall: udhcpd: no process killed
+[00:00:23.430620][LCM]: Protect Attach Status Timer Out.
+[00:00:23.432060][LCM]: [attachmode]operateFlg:[0] attachStatusFlg:[0] mode:[0] manual:[0].
+linkdown port 1
+ESW: Link Status Changed - Port1 Link Down
+Set: phy[1].reg[do sysRegWrite cmd set gpio on/off
+0] = 3900
+linkdown port 2
+Set: phy[2].reg[0] = 3900
+[00:00:24.430500][LCM]: Protect Attach Process Timer Out.[5]
+linkup port 1
+Set: phy[1].reg[0] = 3100
+linkup port 2
+Set: phy[2].reg[0] = 3100
+net.ipv6.conf.all.forwarding = 1
+hw_nat: module license 'Proprietary' taints kernel.
+Disabling lock debugging due to kernel taint
+Ralink HW NAT Module Enabled
+apcli0    no private ioctls.
+
+ifconfig: ioctl 0x8913 failed: No such device
+brctl: bridge br0: Invalid argument
+brctl: iface ra1: No such device
+brctl: iface ra2: No such device
+brctl: iface ra3: No such device
+brctl: iface wds0: No such device
+brctl: iface wds1: No such device
+brctl: iface wds2: No such device
+brctl: iface wds3: No such device
+TX_BCN DESC a5f12000 size = 320
+RX[0] DESC a5f1c000 size = 2048
+RX[1] DESC a5f1d000 size = 2048
+E2pAccessMode=0
+cfg_mode=9
+cfg_mode=9
+wmode_band_equal(): Band Equal!
+FW Version:ap_pcie
+FW Build Date:20160107100755
+CmdAddressLenReq:(ret = 0)
+CmdFwStartReq: override = 1, address = 1048576
+CmdStartDLRsp: WiFI FW Download Success
+AsicDMASchedulerInit(): DMA Scheduler Mode=0(LMAC)
+efuse_probe: efuse = 10000002
+RtmpChipOpsEepromHook::e2p_type=2, inf_Type=5
+RtmpEepromGetDefault::e2p_dafault=1
+RtmpChipOpsEepromHook: E2P type(2), E2pAccessMode = 2, E2P default = 1
+NVM is FLASH mode, flash_offset = 0x40000
+1. Phy Mode = 14
+Country Region from e2p = ffff
+tssi_1_target_pwr_g_band = 27
+2. Phy Mode = 14
+3. Phy Mode = 14
+NICInitPwrPinCfg(14): Not support for HIF_MT yet!
+NICInitializeAsic(584): Not support rtmp_mac_sys_reset () for HIF_MT yet!
+mt_mac_init()-->
+mt7603_init_mac_cr()-->
+AsicSetMacMaxLen(1826): Set the Max RxPktLen=1024!
+<--mt_mac_init()
+        WTBL Segment 1 info:
+                MemBaseAddr/FID:0x28000/0
+                EntrySize/Cnt:32/128
+        WTBL Segment 2 info:
+                MemBaseAddr/FID:0x40000/0
+                EntrySize/Cnt:64/128
+        WTBL Segment 3 info:
+                MemBaseAddr/FID:0x42000/64
+                EntrySize/Cnt:64/128
+        WTBL Segment 4 info:
+                MemBaseAddr/FID:0x44000/128
+                EntrySize/Cnt:32/128
+AntCfgInit(2567): Not support for HIF_MT yet!
+MCS Set = ff ff 00 00 01
+ESW: Link Status Changed - Port1 Link UP
+do sysRegWrite cmd set gpio on/off
+AsicSetRalinkBurstMode(4148): Not support for HIF_MT yet!
+RTMPSetPiggyBack(876): Not support for HIF_MT yet!
+AsicSetTxPreamble(4135): Not support for HIF_MT yet!
+AsicAddSharedKeyEntry(1992): Not support for HIF_MT yet!
+AsicAddSharedKeyEntry(1992): Not support for HIF_MT yet!
+AsicAddSharedKeyEntry(1992): Not support for HIF_MT yet!
+AsicAddSharedKeyEntry(1992): Not support for HIF_MT yet!
+AsicSetPreTbtt(): bss_idx=0, PreTBTT timeout = 0xa0
+Main bssid = d4:c8:b0:46:25:71
+<==== rt28xx_init, Status=0
+@@@ ed_monitor_init : ===>
+@@@ ed_monitor_init : <===
+MTPciPollTxRxEmpty
+==>Set_RadioOn_Proc (OFF)
+apclii0   no private ioctls.
+
+ifconfig: ioctl 0x8913 failed: No such device
+brctl: bridge br0: Invalid argument
+brctl: iface rai1: No such device
+brctl: iface rai2: No such device
+brctl: iface rai3: No such device
+brctl: iface wdsi0: No such device
+brctl: iface wdsi1: No such device
+brctl: iface wdsi2: No such device
+brctl: iface wdsi3: No such device
+[00:00:31.430600][LCM]: sysinfo tibuild time = 
+meout.
+20141115060606a
+rom patch for E3 IC
+
+platform = 
+ALPS
+hw/sw version = 
+
+ patch version = 
+
+FW Version:0.0.00 Build:1
+Build Time:201607111443____
+fw for E3 IC
+[00:00:31.493620][LCM]: init conneRX[0] DESC a0ac3000 size = 4096
+ct status data:1RX[1] DESC a0ac4000 size = 4096
+ (1)
+[00:00:31.496060][LCM]: init connect statuE2pAccessMode=2
+s voip:1 (1)
+[0cfg_mode=14
+0:00:31.500080][cfg_mode=14
+LCM]: init connewmode_band_equal(): Band Not Equal!
+ct status all :1 (1)
+[00:00:31.508140][LCM]: [attachmode]operate:[0],emm:[0],old:[0],attachmode:[0],searchmode:[2].
+1. Phy Mode = 49
+drivers/net/wireless/rlt_wifi_ap/../rlt_wifi/chips/mt76x2.c:2901 assert (ad->TxPower[choffset].Channel == 42)failed
+Country Region from e2p = ffff
+2. Phy Mode = 49
+3. Phy Mode = 49
+andes_pci_fw_init
+0x1300 = 00073200
+AntCfgInit: primary/secondary ant 0/1
+andes_load_cr:cr_type(2)
+ChipStructAssign(): MT76x2 hook !
+MCS Set = ff ff 00 00 01
+TX0 power compensation = 0x38
+TX1 power compensation = 0x38
+mt76x2_bbp_adjust():rf_bw=2, ext_ch=3, PrimCh=161, HT-CentCh=159, VHT-CentCh=155
+APStartUp(): AP Set CentralFreq at 155(Prim=161, HT-CentCh=159, VHT-CentCh=155, BBP_BW=2)
+mt76x2_calibration(channel = 155)
+Main bssid = d4:c8:b0:46:25:72
+mt76x2_reinit_agc_gain:original agc_vga0 = 0x5c, agc_vga1 = 0x5c
+mt76x2_reinit_agc_gain:updated agc_vga0 = 0x5c, agc_vga1 = 0x5c
+mt76x2_reinit_hi_lna_gain:original hi_lna0 = 0x27, hi_lna1 = 0x27
+mt76x2_reinit_hi_lna_gain:updated hi_lna0 = 0x27, hi_lna1 = 0x27
+original vga value(chain0) = 5c
+original vga value(chain1) = 5c
+<==== rt28xx_init, Status=0
+get_dev_name_prefix(): dev_idx = 1, dev_name_prefix=rai
+get_dev_name_prefix(): dev_idx = 1, dev_name_prefix=rai
+get_dev_name_prefix(): dev_idx = 1, dev_name_prefix=rai
+get_dev_name_prefix(): dev_idx = 1, dev_name_prefix=wdsi
+get_dev_name_prefix(): dev_idx = 1, dev_name_prefix=wdsi
+get_dev_name_prefix(): dev_idx = 1, dev_name_prefix=wdsi
+get_dev_name_prefix(): dev_idx = 1, dev_name_prefix=wdsi
+get_dev_name_prefix(): dev_idx = 1, dev_name_prefix=apclii
+RTMPDrvOpen(1):Check if PDMA is idle!
+RTMPDrvOpen(2):Check if PDMA is idle!
+MT76xx_PciMlmeRadioOFF:: Wait until MAC 0x1200 bit0 and BBP 0x2130 become 0
+tx_kickout_fail_count = 0
+tx_timeout_fail_count = 0
+rx_receive_fail_count = 0
+alloc_cmd_msg = 37
+free_cmd_msg = 37
+sc load_ko in rcS
+[00:00:34.988380][WEBSERVER]: Init Procress PID=993 wp=(nil) mode=0[00:00:34.989040][WEBSERVER]: [firewall_init] init_opt:11
+++++++rcS done++++++
+init: can't log to /dev/tty5
+starting pid 999, tty '/dev/ttyS1': '/bin/sh'
+
+
+BusyBox v1.12.1 (2018-05-10 12:49:11 CST) built-in shell (ash)
+Enter 'help' for a list of built-in commands.
+
+# [00:00:35.073460][WEBSERVER]: FIREWALL_CHAIN: arp.rule_nums=1eth_wan_dhcp_connected=
+eth_wan_pppoe_connected=
+PrimaryWan=0
+lte_data_state=1
+APCLI_24G_STATUS=
+[00:00:35.121740][WEBSERVER]: FIREWALL_CHAIN: arp_forward.rule_nums=1APCLI_5G_STATUS=
+lte_emm_state=0
+Interface doesn't accept private ioctl...
+set (8BE2): Invalid argument
+Interface doesn't accept private ioctl...
+set (8BE2): Invalid argument
+Interface doesn't accept private ioctl...
+set (8BE2): Invalid argument
+Interface doesn't accept private ioctl...
+set (8BE2): Invalid argument
+net.ipv4.tcp_syncookies = 0
+net.ipv4.tcp_max_syn_backlog = 128
+net.ipv4.tcp_syn_retries = 5
+[SC] SIP Load Kernel Modules... 
+net.ipv4.tcp_synack_retries = 5
+[00:00:35.338840][WEBSERVER]: FIREWALL_CHAIN: malicious_filter.rule_nums=1[SC] sc_load_ko insert modules
+[SC] sc_load_modules insert modules(without ralink ko) ...
+net.ipv4.tcp_syncookies = 0
+net.ipv4.tcp_max_syn_backlog = 128
+osal_module.c:39 OSAL module_init OK
+
+net.ipv4.tcp_syn_retries = 5
+net.ipv4.tcp_synack_retries = 5
+[00:00:35.430520][LCM]: Protect Attach Status Timer Out.
+[00:00:35.432440][LCM]: [attachmode]operateFlg:[0] attachStatusFlg:[0] mode:[0] manual:[0].
+lkm.c 178: devname /dev/d2vtspr
+
+[00:00:35.487680][/dev/d2vtspr registered successfuly @ 250.
+
+LCM]: init connect status data:1 (1)
+[00:00:35.499060][LCM]: init connect status voip:1 (1)
+[00:00:35.500340][LCM]: init connect status all :1 (1)
+[00:00:35.504160][LCM]: detach rsp is too late.Manual Attach is Idle.
+[00:00:35.583980][WEBSERVER]: FIREWALL_CHAIN: input_pre.rule_nums=1[00:00:35.587840][LCM]: init connect status data:1 (1)
+[00:00:35.592200][LCM]: init connect status voip:1 (1)
+[00:00:35.596340][LCM]: init connect status all :1 (1)
+[00:00:35.600180][LCM]: [attachmode]operate:[0],emm:[0],old:[0],attachmode:[0],searchmode:[2].
+[00:00:35.703780][WEBSERVER]: FIREWALL_CHAIN: forward_passthrough.rule_nums=1[00:00:35.718020][WEBSERVER]: FIREWALL_CHAIN: forward_pre.rule_nums=1[00:00:35.825940][WEBSERVER]: FIREWALL_CHAIN: input_post.rule_nums=1[00:00:36.168000][WEBSERVER]: FIREWALL_CHAIN: alg.rule_nums=1[00:00:36.169440][WEBSERVER]: [alg] run
+[00:00:36.197060][WEBSERVER]: FIREWALL_CHAIN: output.rule_nums=1[00:00:36.341720][WEBSERVER]: FIREWALL_CHAIN: mark.rule_nums=1[00:00:36.430640][LCM]: sysinfo timeout.
+[00:00:36.495920][LCM]: init conneEnter _VHW_pcmOpen
+
+ct status data:1_VHW_pcmOpen exit
+
+ (1)
+[00:00:36._VHW_wdtTask is running
+
+500160][LCM]: init connect statuswitch register base addr to system register 0xbe000000
+s voip:1 (1)
+[00:00:36.508200][LCM]: init connect status all :1 (1)
+[00:00:36.535240][LCM]: [attachmode]operate:[0],emm:[0],old:[0],attachmode:[0],searchmode:write offset 0x2030, value 0x28000000
+[2].
+write offset 0x2060, value 0x8181
+[SC] sc_load_modules insert modules done...
+net.ipv4.netfilter.ip_conntrack_icmp_timeout = 30
+net.ipv4.netfilter.ip_conntrack_udp_timeout = 180
+net.ipv4.netfilter.ip_conntrack_tcp_timeout_established = 180
+Write correct !
+
+Channel 0: Revision Id 0xA2(0x18:0x2)
+
+_TIC_initHw 1007 - Read data in register 14: aa
+
+Si3217x: Channel 0 : Type = PROSLIC
+si3217x : Channel 0 : Type = 24
+si3217x : Channel 0 : Rev  = 2
+Si3217x: loading patch: 06182014
+pppoe_addr : 
+dhcp_addr : 
+eth_wan_if_addr : 
+is_wan_port_up : 
+Si3217x: Channel 0 : VBAT Up = 59.204 v
+[nat_postrouting_pesi.sh] wifi_ap_client : 0
+[nat_postrouting_pesi.sh] wifi_band : 0
+Bad argument `MASQUERADE'
+Try `iptables -h' or 'iptables --help' for more information.
+iptables -t nat -A POSTROUTING -o eth_data -j MASQUERADE
+#               iptables -t nat -A POSTROUTING -o eth_voip -j MASQUERADE
+[00:00:37.539060][WEBSERVER]: FIREWALL_CHAIN: malicious6_filter.rule_nums=1[00:00:37.641060][WEBSERVER]: FIREWALL_CHAIN: forward_pre.rule_nums=1[00:00:37.781020][WEBSERVER]: FIREWALL_CHAIN: input6_pre.rule_nums=1[00:00:37.974880][WEBSERVER]: FIREWALL_CHAIN: input6_post.rule_nums=1Si3217x: PCMStart
+_TIC_fxsSetLineState[1126]: REG30 = 11
+
+[00:00:38.446360][WEBSERVER]: FIREWALL_CHAIN: mark6.rule_nums=1Interface doesn't accept private ioctl...
+set (8BE2): Invalid argument
+Interface doesn't accept private ioctl...
+set (8BE2): Invalid argument
+Interface doesn't accept private ioctl...
+set (8BE2): Invalid argument
+Interface doesn't accept private ioctl...
+set (8BE2): Invalid argument
+net.ipv4.ip_forward = 1
+Ralink HW NAT Module Disabled
+conntrack v1.4.2 (conntrack-tools): connection tracking table has been emptied.
+net.ipv4.ip_forward = 1
+
+             D2 Technologies, Inc.
+      _   _  __                           
+     / | '/  /_  _  /_ _  _  /_  _  ._   _
+    /_.'/_  //_'/_ / // //_///_//_///_'_\ 
+                                _/        
+
+        Unified Communication Products
+
+               www.d2tech.com
+
+        +D2Tech+ VTSP_RT VPORT_R_1_6_91
+
+[00:00:41.430540][LCM]: sysinfo timeout.
+[00:00:41.432060][LCM]: get pin Enable timout.
+[00:00:41.492680][LCM]: init connect status data:1 (1)
+[00:00:41.496060][LCM]: init connect status voip:1 (1)
+[00:00:41.500040][LCM]: init connect status all :1 (1)
+[00:00:41.504100][LCM]: [attachmode]operate:[0],emm:[0],old:[0],attachmode:[0],searchmode:[2].
+[00:00:41.806680][LCM]: lcm_simLedCtrl:state 3 .
+Ralink HW NAT Module Enabled
+/bin/sh: check_ethwan_link_status.sh: not found
+RTNETLINK answers: No such file or directory
+RTNETLINK answers: No such file or directory
+TZCMD=<LST>-7
+[07:00:44.242340][WEBSERVER]: LINE:2355 trywaitBackupImage()  try to start load d2 ko...
+[07:00:44.243280][WEBSERVER]: LINE:2372 trywaitBackupImage() strlen(tmpUpState) == 0
+
+
+
+
+[07:00:44.243660][WEBSERVER]: LINE:2400 trywaitBackupImage() totally waiting 0 seconds before start vapp
+[07:00:44.243920][WEBSERVER]: [sipclient]start vapp, wait 8.
+[init] web syslog and klog init ... [07:00:44.430480][LCM]: Protect Attach Process Timer Out.[5]
+[07:00:46.430500][LCM]: sysinfo timeout.
+[07:00:46.496760][LCM]: init connect status data:1 (1)
+[07:00:46.500080][LCM]: init connect status voip:1 (1)
+[07:00:46.504060][LCM]: init connect status all :1 (1)
+[07:00:46.508160][LCM]: [attachmode]operate:[0],emm:[0],old:[0],attachmode:[0],searchmode:[2].
+[07:00:47.430340][LCM]: Protect Attach Status Timer Out.
+[07:00:47.432060][LCM]: [attachmode]operateFlg:[0] attachStatusFlg:[0] mode:[0] manual:[0].
+[07:00:51.430360][LCM]: sysinfo timeout.
+[07:00:51.493440][LCM]: init connect status data:1 (1)
+[07:00:51.496060][LCM]: init connect status voip:1 (1)
+[07:00:51.500060][LCM]: init connect status all :1 (1)
+[07:00:51.504140][LCM]: [attachmode]operate:[0],emm:[0],old:[0],attachmode:[0],searchmode:[2].
+[07:00:52.248020][WEBSERVER]: [sipclient]start vapp, wait 8 end.
+eth_wan_dhcp_connected=
+eth_wan_pppoe_connected=
+PrimaryWan=0
+lte_data_state=1
+APCLI_24G_STATUS=
+APCLI_5G_STATUS=
+lte_emm_state=0
+[SC] SIP start Client 
+[SC] sc_gen_d2_xml generate d2 xml file
+
+
+========
+vPort Release +D2Tech+ VPORT  VPORT_R_1_6_91 
+========
+
+               D2 Technologies
+      _   _  __                           
+     / | '/  /_  _  /_ _  _  /_  _  ._   _
+    /_.'/_  //_'/_ / // //_///_//_///_'_\ 
+                                _/        
+
+       Unified Communication Products
+
+                 www.d2tech.com
+
+Key[profilename] not matched - ignore line
+Key[srvprovidername] not matched - ignore line
+Key[mwienb0] not matched - ignore line
+Key[mwienb1] not matched - ignore line
+Key[t722] not matched - ignore line
+Key[t711p1u] not matched - ignore line
+Key[t711p1a] not matched - ignore line
+Key[tamrnbbr] not matched - ignore line
+Key[tamrnb] not matched - ignore line
+vapp_init.c:643 - hostname_ptr=127.0.0.1
+
+vapp_init.c:683 VAPP hostname 127.0.0.1 ('127.0.0.1')
+
+vapp_init.c:685 VAPP hostname 127.0+D2Tech+ VTSP_RT VPORT_R_1_6_91
+.0.1 (hbo 7f0000
++D2Tech+
+01)
+
+
+_VAPP_i
++D2Tech+
+nitSetupSystem 7
++D2Tech+ comm trunk-comm src-svn: 4723 d2tools-svn: 4723 
+97 - flashTmo = 
++D2Tech+ dcrm trunk-dcrm src-svn: 4723 d2tools-svn: 4723 
+5
+
+_VAPP_initS
++D2Tech+
+etupSystem 1038 
++D2Tech+
+- MGMT port = 10
++D2Tech+
+100
+Set reg sta
++D2Tech+
+tus: Unregistere
++D2Tech+
+d
+vapp_sip_reg.
++D2Tech+ tone M24KEC4_B_1_1-tone_1_2 src-svn: 225 d2tools-svn: 3454 
+c 339 VAPP_sipRe
++D2Tech+
+gInit
+vapp_init
++D2Tech+
+.c 1533: dname00
++D2Tech+ uds trunk-uds src-svn: 4723 d2tools-svn: 4723 
+ not set, defaulting to uname '--sipdomain0'
+vapp_init.c 1652 - dtmfType = 0, coderEnable[VAPP_CODER_DTMF] = 0
+vapp_init.c 1703 - CountryCode = 8 ID
+vapp_init.c: 1771 UA 0 is configured with these params:
+Hostname:      127.0.0.1 (hbo 7f000001)
+HostAddr:      127.0.0.1
+Authname:      ********
+Password:      ********
+Domain:        
+Realm:         ims.indosat.com
+Registrar:     202.62.29.166
+Proxy    :     202.62.29.166
+Username[0]:   ********
+Dname[0]:      ********
+
+
+
+vapp_vtsp.c: VTSP_getVersion reports v1.4.0
+vapp_vtsp.c 457: _VAPP_vtspSetTone country code 8
+Enable GDMA Controller Module 
+
+GDMA IP Version=3
+
+recv SIP evt 21
+event for infc0
+EVT-RELEASE   MSTATE-RESET  fc=0 cw= 0 r|d=0
+EVT-RESET     SSTATE-IDLE       TONE-OFF  SMSG-REG       cl=0 ac=0
+EVT-RESET     SSTATE-IDLE       TONE-OFF  SMSG-REG       cl=0 ac=0
+EVT-RESET     SSTATE-BSYT       TONE-SIL  SMSG-BUSY      cl=0 ac=0
+
+event for infc0
+EVT-RELEASE   MSTATE-RELS   fc=1 cw= 0 r|d=0
+EVT-XXXX      SSTATE-IDLE       TONE-OFF  SMSG-NONE      cl=0 ac=0
+EVT-XXXX      SSTATE-IDLE       TONE-OFF  SMSG-NONE      cl=0 ac=0
+EVT-XXXX      Fatal!........    TONE-OFF  SMSG-NONE      cl=0 ac=0
+
+vapp_sip_fsm.c:1525 master state:1, prevstate:0, slave_0:6, slave_1:6, focus:1, evt:21
+Set call status: Idle
+VAPP_mainControl: Connected to 7f000001:10100
+VAPP_mainControl: sent: vappdebug:2 on port:10100
+msg_ptr = vappdebug:2
+VAPP_mainControl: Connected to 7f000001:10100
+VAPP_mainControl: sent: sipdebug:2 on port:10100
+SIP debug log type = 2
+vapp dbg log 2, sip log 2
+pid 1100's current affinity mask: (null)
+pid 1100's new affinity mask: 2
+[SC] start vpp missing watchdog...
+[07:00:56.430340][LCM]: sysinfo timeout.
+[07:00:56.432080][LCM]: get pin Enable timout.
+[07:00:56.497440][LCM]: init connect status data:1 (1)
+[07:00:56.500080][LCM]: init connect status voip:1 (1)
+[07:00:56.504060][LCM]: init connect status all :1 (1)
+[07:00:56.508140][LCM]: [attachmode]operate:[0],emm:[0],old:[0],attachmode:[0],searchmode:[2].
+[07:00:56.788620][LCM]: lcm_simLedCtrl:state 3 .
+eth_wan_dhcp_connected=
+eth_wan_pppoe_connected=
+PrimaryWan=0
+lte_data_state=1
+APCLI_24G_STATUS=
+APCLI_5G_STATUS=
+lte_emm_state=0
+[SC]  deactivate sipclient
+[SC] sc_gen_d2_xml generate d2 xml file
+VAPP_mainControl: Connected to 7f000001:10100
+VHW: DSP suspend.
+
+fs.mqueue.msg_max = 32
+net.netfilter.nf_conntrack_h323_enable = 1
+net.netfilter.nf_conntrack_pptp_enable = 1
+nf_conntrack_rtsp v0.6.21 loading
+net.netfilter.nf_conntrack_rtsp_enable = 1
+net.netfilter.nf_conntrack_sip_enable = 0
+net.netfilter.nf_conntrack_sip_enable = 1
+[07:00:58.523240][WEBSERVER]: [GOAHEAD] setupEthernetWan()
+Clear Ethernet wan state
+eth_wan_clear.sh clear all
+lte_emm_state=0
+lte_data_state=1
+WanMode=0
+VAPP_mainControl: sent: reinit 127.0.0.1 on port:10100
+net.ipv4.ip_forward = 0
+all ok
+[eth_wan.sh]Eth WAN Disable
+[eth_wan.sh]kill udhcpc process 
+pppoe-stop: Cannot read configuration file '/etc_ro/ppp/pppoe.conf'
+Clear dhcp state
+Take ethernet wan as lan
+switch reg write offset=2014, value=10001
+switch reg write offset=2114, value=10001
+switch reg write offset=2214, value=10001
+switch reg write offset=2314, value=10001
+switch reg write offset=2414, value=10001
+switch reg write offset=2514, value=10001
+REG_ESW_WT_MAC_ATC is 0x7ff0002
+done.
+eth_wan_clear.sh clear dhcp
+REG_ESW_WT_MAC_ATA1 is 0xd4c8b046
+REG_ESW_WT_MAC_ATA2 is 0x25708067
+REG_ESW_WT_MAC_ATWD is 0xff00041c
+done.
+lte_emm_state=0
+lte_data_state=1
+ifconfig: eth_voip: error fetching interface information: Device not found
+WanMode=0
+MAC address format error, should be of length 12
+net.ipv4.ip_forward = 0
+[07:00:59.030620][WEBSERVER]: [goahead.c]connectionStateChangedHandler
+dhcp ok
+OSAL_netCloseSocket: Bad file descriptor
+OSAL_netCloseSocket: Bad file descriptor
+OSAL_netCloseSocket: Bad file descriptor
+[eth_wan.sh] dhcprelay.sh restart
+dns_pesi.sh read nv start
+Stop DHCPRELAY ...
+killall: dhcprelay: no process killed
+dns_pesi.sh read nv stop
+dns_pesi.sh rm start
+dns_pesi.sh rm stop
+LTE_DNS
+Ethernet_DNS
+dns_pesi.sh all stop
+OSAL_netCloseSocket: Bad file descriptor
+OSAL_netCloseSocket: Bad file descriptor
+OSAL_netCloseSocket: Bad file descriptor
+File /etc_ro/ppp/pppoe.conf does not exist.
+cp /sbin/pppoe.conf /etc_ro/ppp/pppoe.conf
+File /etc_ro/ppp/pppoe-server-options does not exist.
+[07:00:59.430380][LCM]: Protect Attach Status Timer Out.
+[07:00:59.432120][LCM]: [attachmode]operateFlg:[0] attachStatusFlg:[0] mode:[0] manual:[0].
+cp /sbin/pppoe-server-options /etc_ro/ppp/pppoe-server-options
+level=[5]
+set fotac_log_level:4
+[ Fotac ]: bind fotac  ctrl socket port 10050 ok g_fotactrl_socket:6.
+[ Fotac ]: fota fotac_crtl_initSocket OK.
+[ Fotac ]: fota fotac_crtl_initThread OK.
+[ Fotac ]: fotac_socket_sendMsgInit OK ...
+[ Fotac ]:  fotac_socket_recvSocketInit:8 
+[ Fotac ]: fotac_socket_recvSocketInit OK ...
+[07:00:59.470320][WEBSERVER]: [do_init][3010] over 
+[ Fotac ]: [ fotac_re_auto_check_timer ]: Stop retart auto check  timer ...
+[ Fotac ]: [ fota_auto_check ]: close auto check,Donot need set auto check....
+[ Fotac ]: upgResult =[2] upgFlag=[0] last_fota_upg_result=[2]
+[ Fotac ]: [ fota_first_auto_checkupg ]start_time=[25259] end_time=[25859]  first_chk_state=[0]
+[ Fotac ]: fotac_baseTimer_Init OK.
+[ Fotac ]: fwm fotac_fwm_modeInit OK.
+[ Fotac ]:  fotac_main_initThread start ...
+[ Fotac ]:  fotac_main_initThread end ...
+[ Fotac ]:  fotac_main_initThread OK.
+[07:00:59.483520][LCM]: init connect status data:1 (1)
+[07:00:59.488160][LCM]: init connect status voip:1 (1)
+[07:00:59.492120][LCM]: init connect status all :1 (1)
+[07:00:59.496120][LCM]: detach rsp is too late.Manual Attach is Idle.
+[07:00:59.587680][LCM]: init connect status data:1 (1)
+[07:00:59.592080][LCM]: init connect status voip:1 (1)
+[07:00:59.596100][LCM]: init connect status all :1 (1)
+[07:00:59.600160][LCM]: [attachmode]operate:[0],emm:[0],old:[0],attachmode:[0],searchmode:[2].
+webs: Listening for HTTP requests at address 192.168.8.1
+[07:01:00.091240][WEBSERVER]: enter formDefineAPN
+[07:01:00.095520][WEBSERVER]: goahead.uid = 1000
+[07:01:00.095860][WEBSERVER]: [FW: B009, Build Time: Mar 20 2018 14:35:39, Up Time: 61]
+[pbi] wait loading module....
+[pbi] start checking loaded module....
+sipclient pid=
+goahead pid=993
+dnsmasq pid=812
+cm pid=392
+[pbi] checking loaded module OK.
+bserver ver 0.1
+Bind Status = 0
+Sock port 60000
+[bserver] ready to upgrade
+ci_get_data_pdn_if returns false.
+ci_get_data_pdn_ip returns false.
+ci_get_data_pdn_ip6 returns false.
+ci_get_data_pdn_ip6_prefix returns false.
+ci_get_voip_pdn_if returns false.
+ci_get_voip_pdn_ip returns false.
+ci_get_sip_if returns false.
+ci_get_sip_ip returns false.
+[07:01:01.336760][WEBSERVER]: [goahead.c]INIT_IF_CHANGED
+[07:01:01.337140][WEBSERVER]: Fork: Parent Procress PID=993 INIT_TID=754451696 wp=(nil) mode=48[07:01:01.337200][WEBSERVER]: Init Procress PID=993 wp=(nil) mode=48[07:01:01.337620][WEBSERVER]: [firewall_init] init_opt:48
+[07:01:01.398140][WEBSERVER]: [firewall.c] INIT_IF_CHANGED if_change_flags:0
+[07:01:01.430440][LCM]: sysinfo timeout.
+[07:01:01.493740][LCM]: init connect status data:1 (1)
+[07:01:01.496120][LCM]: init connect status voip:1 (1)
+[07:01:01.500140][LCM]: init connect status all :1 (1)
+[07:01:01.504160][LCM]: [attachmode]operate:[0],emm:[0],old:[0],attachmode:[0],searchmode:[2].
+[nat_postrouting_pesi.sh] wifi_ap_client : 0
+[nat_postrouting_pesi.sh] wifi_band : 0
+iptables -t nat -A POSTROUTING -o eth_data -j MASQUERADE
+#               iptables -t nat -A POSTROUTING -o eth_voip -j MASQUERADE
+[07:01:01.604080][WEBSERVER]: FIREWALL_CHAIN: mark.rule_nums=1[07:01:01.702200][WEBSERVER]: FIREWALL_CHAIN: forward_passthrough.rule_nums=1net.ipv4.netfilter.ip_conntrack_icmp_timeout = 30
+net.ipv4.netfilter.ip_conntrack_udp_timeout = 180
+net.ipv4.netfilter.ip_conntrack_tcp_timeout_established = 180
+Start DHCPRELAY ...
+pppoe_addr : 
+dhcp_addr : 
+eth_wan_if_addr : 
+is_wan_port_up : 0
+DHCP relay is disable
+[07:01:02.375480][WEBSERVER]: FIREWALL_CHAIN: mark6.rule_nums=1eth_wan.sh disable ok
+/bin/sh: check_ethwan_link_status.sh: not found
+RTNETLINK answers: No such file or directory
+RTNETLINK answers: No such file or directory
+net.ipv4.ip_forward = 0
+conntrack v1.4.2 (conntrack-tools): 0 flow entries have been deleted.
+conntrack v1.4.2 (conntrack-tools): 0 flow entries have been deleted.
+[sky][pesi_cwmp_ip_chg_data] ipdown LINE:1448
+[07:01:03.221760][WEBSERVER]: [do_init][3010] over 
+[07:01:03.222400][WEBSERVER]: initInternet exit tid=754451696 (t=2)... --- CWMPd is not running
+Handle ipdown event for cwmpd
+.
+[07:01:06.430600][LCM]: sysinfo timeout.
+[07:01:06.494580][LCM]: init connect status data:1 (1)
+[07:01:06.496060][LCM]: init connect status voip:1 (1)
+[07:01:06.500060][LCM]: init connect status all :1 (1)
+[07:01:06.504100][LCM]: [attachmode]operate:[0],emm:[0],old:[0],attachmode:[0],searchmode:[2].
+[07:01:08.430180][LCM]: Protect Attach Process Timer Out.[5]
+[07:01:11.430260][LCM]: sysinfo timeout.
+[07:01:11.432060][LCM]: get pin Enable timout.
+[07:01:11.436100][LCM]: Protect Attach Status Timer Out.
+[07:01:11.440060][LCM]: [attachmode]operateFlg:[0] attachStatusFlg:[0] mode:[0] manual:[0].
+[07:01:11.444040][LCM]: LCM reset timeout[1].
+[07:01:11.493600][LCM]: init connect status data:1 (1)
+[07:01:11.496060][LCM]: init connect status voip:1 (1)
+[07:01:11.500060][LCM]: init connect status all :1 (1)
+[07:01:11.504120][LCM]: [attachmode]operate:[0],emm:[0],old:[0],attachmode:[0],searchmode:[2].
+[07:01:11.908500][LCM]: lcm_simLedCtrl:state 3 .
+[07:01:16.430260][LCM]: sysinfo timeout.
+[07:01:16.494300][LCM]: init connect status data:1 (1)
+[07:01:16.496080][LCM]: init connect status voip:1 (1)
+[07:01:16.500060][LCM]: init connect status all :1 (1)
+[07:01:16.504080][LCM]: [attachmode]operate:[0],emm:[0],old:[0],attachmode:[0],searchmode:[2].
+[07:01:21.430260][LCM]: sysinfo timeout.
+[07:01:21.495280][LCM]: init connect status data:1 (1)
+[07:01:21.496040][LCM]: init connect status voip:1 (1)
+[07:01:21.500080][LCM]: init connect status all :1 (1)
+[07:01:21.504060][LCM]: [attachmode]operate:[0],emm:[0],old:[0],attachmode:[0],searchmode:[2].
+[07:01:23.430100][LCM]: Protect Attach Status Timer Out.
+[07:01:23.432060][LCM]: [attachmode]operateFlg:[0] attachStatusFlg:[0] mode:[0] manual:[0].
+[07:01:23.487340][LCM]: init connect status data:1 (1)
+[07:01:23.488060][LCM]: init connect status voip:1 (1)
+[07:01:23.492040][LCM]: init connect status all :1 (1)
+[07:01:23.496060][LCM]: detach rsp is too late.Manual Attach is Idle.
+[07:01:23.585400][LCM]: init connect status data:1 (1)
+[07:01:23.588060][LCM]: init connect status voip:1 (1)
+[07:01:23.592060][LCM]: init connect status all :1 (1)
+[07:01:23.596100][LCM]: [attachmode]operate:[0],emm:[0],old:[0],attachmode:[0],searchmode:[2].
+[07:01:26.430200][LCM]: sysinfo timeout.
+[07:01:26.432060][LCM]: get pin Enable timout.
+[07:01:26.493800][LCM]: init connect status data:1 (1)
+[07:01:26.496080][LCM]: init connect status voip:1 (1)
+[07:01:26.500060][LCM]: init connect status all :1 (1)
+[07:01:26.504120][LCM]: [attachmode]operate:[0],emm:[0],old:[0],attachmode:[0],searchmode:[2].
+[07:01:26.811460][LCM]: lcm_simLedCtrl:state 3 .
+[07:01:31.430180][LCM]: sysinfo timeout.
+[07:01:31.492440][LCM]: init connect status data:1 (1)
+[07:01:31.496080][LCM]: init connect status voip:1 (1)
+[07:01:31.500060][LCM]: init connect status all :1 (1)
+[07:01:31.504100][LCM]: [attachmode]operate:[0],emm:[0],old:[0],attachmode:[0],searchmode:[2].
+[07:01:32.430080][LCM]: Protect Attach Process Timer Out.[5]
+[07:01:35.430060][LCM]: Protect Attach Status Timer Out.
+[07:01:35.432060][LCM]: [attachmode]operateFlg:[0] attachStatusFlg:[0] mode:[0] manual:[0].
+[07:01:36.430120][LCM]: sysinfo timeout.
+[07:01:36.497200][LCM]: init connect status data:1 (1)
+[07:01:36.500060][LCM]: init connect status voip:1 (1)
+[07:01:36.504060][LCM]: init connect status all :1 (1)
+[07:01:36.508140][LCM]: [attachmode]operate:[0],emm:[0],old:[0],attachmode:[0],searchmode:[2].
+[07:01:41.430060][LCM]: sysinfo timeout.
+[07:01:41.432080][LCM]: get pin Enable timout.
+[07:01:41.498340][LCM]: init connect status data:1 (1)
+[07:01:41.500100][LCM]: init connect status voip:1 (1)
+[07:01:41.504140][LCM]: init connect status all :1 (1)
+[07:01:41.508140][LCM]: [attachmode]operate:[0],emm:[0],old:[0],attachmode:[0],searchmode:[2].
+[07:01:41.788340][LCM]: lcm_simLedCtrl:state 3 .
+[07:01:46.430080][LCM]: sysinfo timeout.
+[07:01:46.496260][LCM]: init connect status data:1 (1)
+[07:01:46.500120][LCM]: init connect status voip:1 (1)
+[07:01:46.504060][LCM]: init connect status all :1 (1)
+[07:01:46.508140][LCM]: [attachmode]operate:[0],emm:[0],old:[0],attachmode:[0],searchmode:[2].
+Algorithmics/MIPS FPU Emulator v1.5
+[07:01:47.429960][LCM]: Protect Attach Status Timer Out.
+[07:01:47.432080][LCM]: [attachmode]operateFlg:[0] attachStatusFlg:[0] mode:[0] manual:[0].
+[07:01:47.489200][LCM]: init connect status data:1 (1)
+[07:01:47.492060][LCM]: init connect status voip:1 (1)
+[07:01:47.496040][LCM]: init connect status all :1 (1)
+[07:01:47.500040][LCM]: detach rsp is too late.Manual Attach is Idle.
+[07:01:47.583240][LCM]: init connect status data:1 (1)
+[07:01:47.584120][LCM]: init connect status voip:1 (1)
+[07:01:47.588040][LCM]: init connect status all :1 (1)
+[07:01:47.592060][LCM]: [attachmode]operate:[0],emm:[0],old:[0],attachmode:[0],searchmode:[2].
+[07:01:51.430020][LCM]: sysinfo timeout.
+[07:01:51.495300][LCM]: init connect status data:1 (1)
+[07:01:51.496060][LCM]: init connect status voip:1 (1)
+[07:01:51.500080][LCM]: init connect status all :1 (1)
+[07:01:51.504060][LCM]: [attachmode]operate:[0],emm:[0],old:[0],attachmode:[0],searchmode:[2].
