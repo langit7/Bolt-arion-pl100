@@ -18,7 +18,7 @@ else
          uci commit network
          /etc/init.d/network reload
          ip route add default dev modem.103
-		 sleep 60
+	 sleep 60
         else
          echo "OK IP eth_data $ethdataip"
         fi
