@@ -46,6 +46,7 @@ else
             uci commit network
             /etc/init.d/network reload
             ip route add default dev modem.103
+            sleep 30
       else
             echo "OK IP LTE eth_data $ethdataip"
       fi
