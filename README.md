@@ -8,6 +8,8 @@ mtd2: 00020000 00010000 "Config"
 mtd3: 00010000 00010000 "Factory"
 mtd4: 00fb0000 00010000 "Kernel"
 ```
+STOK url untuk lock  http://192.168.1.1/engineering password superadmin
+
 switchconfig
 ```
 hash  port(0:6)   fid   vid  age   mac-address     filter my_mac
