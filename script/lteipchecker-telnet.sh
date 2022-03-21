@@ -7,12 +7,12 @@ lteip=`head -1 /tmp/ipmodem.txt`
 ltedns=`tail -1 /tmp/ipmodem.txt`
 if [ -z "$lteip" ]
 then
-      echo "Ip modem tidak dapat di cek"
+      echo "IP modem tidak dapat di cek"
 else
      if [[ "$ethdataip" != "$lteip" ]];then
-        echo " eth_data $ethdataip \n LTE IP $lteip dns $ltedns"
+        echo "eth_data $ethdataip \n LTE IP $lteip dns $ltedns"
          #ifconfig modem.103 $lteip netmask 255.255.255.255 up
-        logger -p notice -t lte "IP berubah dar $ethdata menjadi $lteip dns $ltedns"
+        logger -p notice -t lte "IP berubah dari $ethdataip menjadi $lteip dns $ltedns"
          uci set network.eth_data.ipaddr="$lteip"
          uci set network.eth_data.dns="$ltedns"
          uci commit network
