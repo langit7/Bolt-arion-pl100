@@ -1,4 +1,4 @@
-Flash Route Bolt PL100 menjadi openwrt tanpa melakukan modifikasi bootloader.
+Flash Router Bolt PL100 menjadi openwrt tanpa melakukan modifikasi bootloader.
 1. siapkan tool yang diperlukan:
  -  putty atau install Telnet client pada Windows
  -  web server  / tftp server tempat file openwrt yang akan di download, jika ada quota bisa download langsung dari internet.
