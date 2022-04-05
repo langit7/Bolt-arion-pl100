@@ -30,4 +30,7 @@ nvram_set ODMC_simlock_plmn_list ""
 Cara ganti IMEI
 ```
 ilegal
+pastikan hanya menggunakan imei agan sendiri;
+telnet ke modem telnet 169.254.0.1
+ketik 'diag set imei nomorimei' yang diinginkan
 ```
