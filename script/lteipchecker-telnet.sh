@@ -1,4 +1,7 @@
 #!/bin/sh
+
+{ echo "ucfg set config wan lte apntable apn1 apn_name internet"; sleep 2; } | telnet 169.254.0.1
+
 while sleep 5; do
 { echo "nvram_get cache wan_ipaddr"; echo "nvram_get cache wan_primary_dns"; sleep 2; } | telnet 169.254.0.1 | grep -Eo '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}' | grep -v "169.254.0.1"  > /tmp/ipmodem.txt
 
