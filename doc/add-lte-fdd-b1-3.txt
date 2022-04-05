@@ -1,0 +1,45 @@
+Secara default modem GCT GDM7243 Pada Bolt  PL100 hanya mendukung tdd b39,b40,b41
+nvm pinfo
+ =====================
+ Vport   Band  Pport
+ =====================
+ 0       39      4
+ 1       39      5
+ 2       40      4
+ 3       40      5
+ 4       41      4
+ 5       41      5
+
+contoh menambahkan band3
+1. Add vport
+USAGE: nvm bcfgw 0 <port> <pport> 
+nvm bcfgw 0 6 4
+nvm bcfgw 0 7 5
+2. Add band port
+nvm bcfgw 1 6 1
+nvm bcfgw 1 7 1
+3. save config
+nvm bcfgsv 1
+4. Restart modem 
+reboot
+5. Add scan band band 40 dan 1
+nvm bcfgw 49 0 40 1
+atau rrc capw 4 2 1 40 1 
+6. save config
+nvm bcfgsv 1
+7. Restart modem 
+reboot
+
+command2 penting
+DM> nvm
+Usage: nvm [calw|calr|calsv|bcfgw|bcfgr|bcfgsv|clear|pinfo]
+
+Description:
+    calw   : Write RF, ET, TC calibration data
+    calr   : Read RF, ET, TC calibration data
+    calsv  : Save RF, ET, TC calibration data
+    bcfgw  : Write Board configuration data
+    bcfgr  : Read Board configuration data
+    bcfgsv : Save Board configuration data
+    clear  : Write Default for All NV Block
+    pinfo  : Read All ports info from Board configuration data
