@@ -7,5 +7,6 @@ Flash Router Bolt PL100 menjadi openwrt tanpa melakukan modifikasi bootloader.
 3. Setelah reboot akses router dengan telnet, dari Windows ketik cmd kemudian telnet 192.168.1.1 masukkan user admin dan password admin.
 4. ketik cd /tmp kemudian curl -LO http://192.168.1.1/wrt.bin ( contoh jika ada webserver di pc dan file name openwrt = wrt.bin),
 4.a. Jika menggunakan tftp server  tftp -l wrt.bin -r wrt.bin -g  192.168.1.1
-5. ketik mtd_write -r write wrt.bin Kernel
-6. Done
+5. Untuk mencegah corupt , pastikan file terdownload sempurna cek file size dengan command ls -al , atau validasi dengan md5sum
+6. ketik mtd_write -r write wrt.bin Kernel
+7. Done
