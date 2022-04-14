@@ -1,0 +1,2 @@
+sed -i '/^exit*/i screen -dmS ltewatcher lte' /etc/rc.local
+chmod +x /sbin/lte

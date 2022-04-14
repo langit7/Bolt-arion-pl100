@@ -1,0 +1,4 @@
+script auto update ip interface lte
+target/linux/ramips/mt7621/base-files/sbin/lte
+script auto add screen command 
+target/linux/ramips/mt7621/base-files/etc/uci-defaults/02_lte
